@@ -7,9 +7,6 @@ pico_laser:
   specialty: "dermatology"
   type: "procedure"
   description: "皮秒レーザーで色素を微粒子化し、シミ・ニキビ跡を改善"
-  priceMin: 20000
-  priceMax: 40000
-  currency: "JPY"
   downtime: "1–3日"
   sessions: "3–5回"
   indications: ["acne_scar", "melasma", "enlarged_pores"]
@@ -23,9 +20,6 @@ hifu:
   specialty: "dermatology"
   type: "procedure"
   description: "高強度焦点式超音波でSMAS層を加熱しタイトニング"
-  priceMin: 30000
-  priceMax: 80000
-  currency: "JPY"
   downtime: "ほぼ無し"
   sessions: "年2回"
   indications: ["sagging", "wrinkles"]
@@ -42,9 +36,6 @@ dental_implant:
   specialty: "dentistry"
   type: "surgery"
   description: "顎骨にチタンインプラントを埋入し人工歯冠を装着"
-  priceMin: 250000
-  priceMax: 400000
-  currency: "JPY"
   downtime: "腫れ1週間"
   sessions: "3回"
   indications: ["tooth_loss"]
@@ -61,9 +52,6 @@ dtap_ipv_vaccine:
   specialty: "pediatrics"
   type: "vaccine"
   description: "百日せき・ジフテリア・破傷風・ポリオを同時に予防"
-  priceMin: 0
-  priceMax: 0
-  currency: "JPY"
   downtime: "注射部位の腫れ"
   sessions: "4回"
   indications: ["diphtheria", "tetanus", "pertussis", "poliomyelitis"]
@@ -80,9 +68,6 @@ epidural_labor:
   specialty: "obstetrics"
   type: "procedure"
   description: "腰椎硬膜外腔に局所麻酔薬を投与して分娩疼痛を緩和"
-  priceMin: 100000
-  priceMax: 250000
-  currency: "JPY"
   downtime: "入院2日"
   sessions: "1回"
   indications: ["labor_pain"]
@@ -99,9 +84,6 @@ cat_castration:
   specialty: "veterinary"
   type: "surgery"
   description: "精巣を摘出し繁殖行動とスプレー行為を抑制"
-  priceMin: 8000
-  priceMax: 15000
-  currency: "JPY"
   downtime: "1–2日"
   sessions: "1回"
   indications: ["population_control", "behavior_modification"]
@@ -118,9 +100,6 @@ rabbit_spay:
   specialty: "veterinary"
   type: "surgery"
   description: "卵巣子宮を摘出し子宮疾患を予防"
-  priceMin: 20000
-  priceMax: 35000
-  currency: "JPY"
   downtime: "3–5日"
   sessions: "1回"
   indications: ["uterine_cancer_prevention"]
@@ -134,9 +113,6 @@ parrot_beak_trim:
   specialty: "veterinary"
   type: "procedure"
   description: "過長になった嘴を適切な長さに研磨・整形"
-  priceMin: 3000
-  priceMax: 6000
-  currency: "JPY"
   downtime: "無し"
   sessions: "随時"
   indications: ["overgrown_beak"]
@@ -150,9 +126,6 @@ gecko_fecal_exam:
   specialty: "veterinary"
   type: "exam"
   description: "寄生虫卵検査と駆虫薬投与"
-  priceMin: 2500
-  priceMax: 5000
-  currency: "JPY"
   downtime: "無し"
   sessions: "1回"
   indications: ["parasite_screening"]
