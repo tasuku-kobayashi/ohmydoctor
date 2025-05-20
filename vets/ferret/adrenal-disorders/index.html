@@ -9,89 +9,138 @@
   <!-- canonical HUB -->
   <link rel="canonical" href="https://ohmydoctor.jp/vets/ferret/adrenal-disorders/">
 
-  <!-- JSON-LD  (@graph: MedicalCondition + FAQPage) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "MedicalCondition",
-        "@id": "https://ohmydoctor.jp/id/condition/ferret-adrenal-disease",
-        "name": "フェレット副腎疾患",
-        "alternateName": ["Adrenal Disease in Ferrets", "Hyperadrenocorticism"],
-        "bodyLocation": "endocrine system",
-        "animalSpecies": "mustelid",
-        "signOrSymptom": [
-          "左右対称の脱毛",
-          "性行動の再発",
-          "外陰部腫大"
-        ],
-        "riskFactor": "去勢・避妊手術後のフェレット、3歳以上",
-        "possibleTreatment": [
-          {
-            "@type": "MedicalProcedure",
-            "name": "副腎疾患スクリーニング検査",
-            "url": "https://ohmydoctor.jp/vets/ferret/adrenal-screen/"
-          },
-          {
-            "@type": "MedicalTherapy",
-            "name": "外科的副腎摘出術"
-          },
-          {
-            "@type": "MedicalTherapy",
-            "name": "レプトロリド（GnRH アゴニスト）投与"
-          }
-        ]
-      },
+<!-- JSON-LD  (@graph : MedicalCondition + FAQPage, PubMed sameAs 付与) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    /*── MedicalCondition ───────────────────────────────*/
+    {
+      "@type": "MedicalCondition",
+      "@id": "https://ohmydoctor.jp/id/condition/ferret-adrenal-disease",
+      "url": "https://ohmydoctor.jp/vets/ferret/adrenal-disorders/",
+      "name": "フェレット副腎疾患",
+      "description": "中高齢フェレットに発症しやすい内分泌疾患で、左右対称の脱毛や性ホルモン関連症状を引き起こす。",
+      "alternateName": ["Adrenal Disease in Ferrets", "Hyperadrenocorticism"],
+      "bodyLocation": "endocrine system",
+      "animalSpecies": "mustelid",
+      "signOrSymptom": [
+        "左右対称の脱毛",
+        "性行動の再発",
+        "外陰部腫大"
+      ],
+      "riskFactor": "去勢・避妊手術後、3歳以上、長日光環境",
+      "possibleTreatment": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "副腎疾患スクリーニング検査",
+          "url": "https://ohmydoctor.jp/vets/ferret/adrenal-screen/"
+        },
+        { "@type": "MedicalTherapy", "name": "外科的副腎摘出術" },
+        { "@type": "MedicalTherapy", "name": "レプトロリド（GnRH アゴニスト）投与" }
+      ]
+    },
 
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "副腎疾患になるフェレットは何歳くらいが多い？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "発症のピークは3〜4歳で、平均発症年齢は3.4歳と報告されています。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "代表的な症状は？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "脱毛、去勢雄の性行動再発、外陰部腫大が最も多く見られます。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "超音波検査だけで診断できますか？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "超音波所見だけでは確定診断は難しく、血清ホルモン測定と組み合わせることが推奨されます。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "手術と内科治療、どちらが長期成績に優れますか？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "長期追跡では外科摘出のほうが高い生存率を示しますが、腫瘍サイズや全身状態で治療方針が変わります。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "薬だけで治るケースはある？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "レプトロリドなどのホルモン療法で症状が軽減する例はありますが、腫瘍縮小まで至らない場合が多いです。"
-            }
+    /*── FAQPage ────────────────────────────────────────*/
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "副腎疾患になるフェレットは何歳くらいが多い？",
+          "sameAs": "https://pubmed.ncbi.nlm.nih.gov/8407489/",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "発症のピークは3〜4歳で、平均発症年齢は3.4歳と報告されています。"
           }
-        ]
-      }
-    ]
-  }
-  </script>
+        },
+        {
+          "@type": "Question",
+          "name": "代表的な初期症状は？",
+          "sameAs": "https://pubmed.ncbi.nlm.nih.gov/9358415/",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "左右対称の脱毛、性行動の再発、外陰部腫大が最も多く見られます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "超音波検査だけで診断できますか？",
+          "sameAs": "https://pubmed.ncbi.nlm.nih.gov/9238774/",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "超音波では腫大を確認できますが、機能異常までは分からないため血清ホルモン測定と組み合わせる必要があります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "手術と内科治療、長期成績はどちらが優れますか？",
+          "sameAs": "https://pubmed.ncbi.nlm.nih.gov/18447778/",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "腫瘍摘出が可能なら外科摘出の方が2年生存率が高いと報告されています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "薬だけで完治するケースはある？",
+          "sameAs": "https://pubmed.ncbi.nlm.nih.gov/27890288/",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GnRH アゴニストで症状が軽減する例はありますが、腫瘍そのものを完全に消失させることはまれです。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "若齢で去勢しても副腎疾患は発症しますか？",
+          "sameAs": "https://pubmed.ncbi.nlm.nih.gov/12358636/",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "早期去勢はホルモンフィードバック破綻を招き、発症リスクを高めると考えられています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "雌雄で発症率は違いますか？",
+          "sameAs": "https://pubmed.ncbi.nlm.nih.gov/9358415/",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "発症率に大差はありませんが、雌は外陰部腫大、雄は排尿障害など症状が異なります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "光周期管理で予防できますか？",
+          "sameAs": "https://pubmed.ncbi.nlm.nih.gov/27705705/",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "長時間の人工照明はリスクを高めるため、8〜10時間の明暗サイクルを維持すると予防に役立つ可能性があります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "飼育環境（ストレス・食餌）は影響しますか？",
+          "sameAs": "https://pubmed.ncbi.nlm.nih.gov/25827908/",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "高カロリー食や運動不足はホルモンバランスを崩す要因となるため、バランスの良い食事と運動が推奨されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "再発率はどのくらい？",
+          "sameAs": "https://pubmed.ncbi.nlm.nih.gov/18447778/",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "片側摘出後の対側再発は約17%と報告されており、定期的な超音波検査が推奨されます。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
