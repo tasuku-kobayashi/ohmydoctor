@@ -1,0 +1,161 @@
+# ─────────────────────────
+# 皮膚科（美容）
+# ─────────────────────────
+pico_laser:
+  name: "ピコレーザー"
+  slug: "pico-laser"
+  specialty: "dermatology"
+  type: "procedure"
+  description: "皮秒レーザーで色素を微粒子化し、シミ・ニキビ跡を改善"
+  priceMin: 20000
+  priceMax: 40000
+  currency: "JPY"
+  downtime: "1–3日"
+  sessions: "3–5回"
+  indications: ["acne_scar", "melasma", "enlarged_pores"]
+  extras:
+    bodySite: ["face"]
+    energyType: "picosecond 532/1064 nm"
+
+hifu:
+  name: "HIFU（ハイフ）"
+  slug: "hifu"
+  specialty: "dermatology"
+  type: "procedure"
+  description: "高強度焦点式超音波でSMAS層を加熱しタイトニング"
+  priceMin: 30000
+  priceMax: 80000
+  currency: "JPY"
+  downtime: "ほぼ無し"
+  sessions: "年2回"
+  indications: ["sagging", "wrinkles"]
+  extras:
+    bodySite: ["jawline", "cheeks"]
+    device: "Ultraformer Ⅲ"
+
+# ─────────────────────────
+# 歯科
+# ─────────────────────────
+dental_implant:
+  name: "デンタルインプラント"
+  slug: "dental-implant"
+  specialty: "dentistry"
+  type: "surgery"
+  description: "顎骨にチタンインプラントを埋入し人工歯冠を装着"
+  priceMin: 250000
+  priceMax: 400000
+  currency: "JPY"
+  downtime: "腫れ1週間"
+  sessions: "3回"
+  indications: ["tooth_loss"]
+  extras:
+    toothArea: "molars"
+    material: "Grade 4 Titanium"
+
+# ─────────────────────────
+# 小児科
+# ─────────────────────────
+dtap_ipv_vaccine:
+  name: "4種混合ワクチン（D​TaP-IPV）"
+  slug: "dtap-ipv"
+  specialty: "pediatrics"
+  type: "vaccine"
+  description: "百日せき・ジフテリア・破傷風・ポリオを同時に予防"
+  priceMin: 0
+  priceMax: 0
+  currency: "JPY"
+  downtime: "注射部位の腫れ"
+  sessions: "4回"
+  indications: ["diphtheria", "tetanus", "pertussis", "poliomyelitis"]
+  extras:
+    ageRange: "0-1"
+    schedule: "3-4-5 か月＋15-18 か月"
+
+# ─────────────────────────
+# 産婦人科
+# ─────────────────────────
+epidural_labor:
+  name: "無痛分娩（硬膜外麻酔）"
+  slug: "epidural-labor"
+  specialty: "obstetrics"
+  type: "procedure"
+  description: "腰椎硬膜外腔に局所麻酔薬を投与して分娩疼痛を緩和"
+  priceMin: 100000
+  priceMax: 250000
+  currency: "JPY"
+  downtime: "入院2日"
+  sessions: "1回"
+  indications: ["labor_pain"]
+  extras:
+    pregnancyStage: "臨月"
+    anesthesia: "epidural"
+
+# ─────────────────────────
+# 獣医（一般：猫）
+# ─────────────────────────
+cat_castration:
+  name: "去勢手術（雄猫）"
+  slug: "cat-castration"
+  specialty: "veterinary"
+  type: "surgery"
+  description: "精巣を摘出し繁殖行動とスプレー行為を抑制"
+  priceMin: 8000
+  priceMax: 15000
+  currency: "JPY"
+  downtime: "1–2日"
+  sessions: "1回"
+  indications: ["population_control", "behavior_modification"]
+  extras:
+    species: "feline"
+    anesthesia: "inhalation"
+
+# ─────────────────────────
+# 獣医（エキゾチックアニマル）
+# ─────────────────────────
+rabbit_spay:
+  name: "避妊手術（雌ウサギ）"
+  slug: "rabbit-spay"
+  specialty: "veterinary"
+  type: "surgery"
+  description: "卵巣子宮を摘出し子宮疾患を予防"
+  priceMin: 20000
+  priceMax: 35000
+  currency: "JPY"
+  downtime: "3–5日"
+  sessions: "1回"
+  indications: ["uterine_cancer_prevention"]
+  extras:
+    species: "lagomorph"
+    anesthesia: "injectable + inhalation"
+
+parrot_beak_trim:
+  name: "オウム嘴トリミング"
+  slug: "parrot-beak-trim"
+  specialty: "veterinary"
+  type: "procedure"
+  description: "過長になった嘴を適切な長さに研磨・整形"
+  priceMin: 3000
+  priceMax: 6000
+  currency: "JPY"
+  downtime: "無し"
+  sessions: "随時"
+  indications: ["overgrown_beak"]
+  extras:
+    species: "psittacine"
+    restraint: "towel wrap"
+
+gecko_fecal_exam:
+  name: "ヤモリ糞便検査（駆虫含む）"
+  slug: "gecko-fecal-exam"
+  specialty: "veterinary"
+  type: "exam"
+  description: "寄生虫卵検査と駆虫薬投与"
+  priceMin: 2500
+  priceMax: 5000
+  currency: "JPY"
+  downtime: "無し"
+  sessions: "1回"
+  indications: ["parasite_screening"]
+  extras:
+    species: "reptile"
+    sampleType: "feces"
