@@ -6,26 +6,88 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="/style.css">
 
-  <!-- JSON-LD : MedicalProcedure + Offer -->
+  <!-- JSON-LD : Physician + Clinic + Procedure (ID で相互リンク) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalProcedure",
-    "@id": "https://ohmydoctor.jp/id/procedure/ferret-adrenal-screen",
-    "name": "フェレット副腎疾患ホルモン検査（血液＋超音波）",
-    "bodyLocation": "abdomen",
-    "animalSpecies": "mustelid",
-    "indication": [
-      { "@type":"MedicalCondition", "name":"副腎疾患 (Adrenal disease)" },
-      { "@type":"MedicalCondition", "name":"脱毛" }
-    ],
-    "howPerformed": "採血後に腹部エコーで左右副腎を計測し、血清エストラジオールとアンドロゲンをCLIA法で測定します。",
-    "estimatedCost": {
-      "@type": "Offer",
-      "price": "12000",
-      "priceCurrency": "JPY"
-    },
-    "followup": "結果説明は当日または翌診察日に行います。"
+    "@graph": [
+
+      /*──① 医師ノード（永続 ID）──*/
+      {
+        "@type": "Physician",
+        "@id": "https://ohmydoctor.jp/id/physician/dr-tanaka",   <!-- 変更不要の固定 URI -->
+        "name": "田中 獣医師",
+        "medicalSpecialty": "veterinary",
+        "description": "エキゾチックアニマル専門。フェレット診療経験15年。",
+        "affiliation": { "@id": "https://ohmydoctor.jp/id/clinic/001" }
+      },
+
+      /*──② クリニックノード──*/
+      {
+        "@type": "MedicalClinic",
+        "@id": "https://ohmydoctor.jp/id/clinic/001",            <!-- ここも永続 ID -->
+        "name": "Oh My Vet Clinic",
+        "address": {
+          "@type": "PostalAddress",
+          "postalCode": "001-0924",
+          "addressRegion": "北海道",
+          "addressLocality": "札幌市北区",
+          "streetAddress": "新川四条17丁目6-15"
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "札幌市北区"
+        },
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "09:00",
+          "closes": "20:00"
+        }],
+        "availableService": {
+          "@id": "https://ohmydoctor.jp/id/procedure/ferret-adrenal-screen"
+        }
+      },
+
+      /*──③ 検査ノード──*/
+      {
+        "@type": "MedicalProcedure",
+        "@id": "https://ohmydoctor.jp/id/procedure/ferret-adrenal-screen",
+        "name": "フェレット副腎疾患ホルモン検査（血液＋超音波）",
+        "bodyLocation": "abdomen",
+        "animalSpecies": "mustelid",
+        "indication": [
+          { "@type": "MedicalCondition", "name": "副腎疾患" },
+          { "@type": "MedicalCondition", "name": "脱毛" }
+        ],
+        "howPerformed": "採血後に腹部エコーで左右副腎を計測し、血清ホルモンをCLIA法で測定。",
+        "performedBy": { "@id": "https://ohmydoctor.jp/id/physician/dr-tanaka" },
+        "followup": "結果説明は当日または翌診察日に行います。"
+      },
+
+      /*──④ FAQ スキーマ──*/
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "検査結果はいつわかりますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "採血から1〜2日以内にお電話またはメールでお知らせします。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "麻酔は使用しますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "採血時はタオル保定のみで麻酔は使用しません。"
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -60,7 +122,6 @@
       <table>
         <tr><th>所要時間</th><td>約30分（採血＋超音波）</td></tr>
         <tr><th>ダウンタイム</th><td>採血部位に軽度の赤みが出ることがあります</td></tr>
-        <tr><th>費用</th><td>12,000〜18,000円（税込・薬剤費別）</td></tr>
       </table>
     </section>
 
@@ -68,11 +129,8 @@
       <h3>予約方法</h3>
       <p>エキゾチック専用ダイヤル <a href="tel:03-1234-5678">03-1234-5678</a> までお電話ください。Web予約は近日公開予定です。</p>
     </section>
-
   </main>
 
-  <footer>
-    © 2025 Oh My Vet Clinic
-  </footer>
+  <footer>© 2025 Oh My Vet Clinic</footer>
 </body>
 </html>
